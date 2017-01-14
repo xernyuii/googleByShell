@@ -2,7 +2,8 @@
 
 #googleByShell
 
-A simple tool to search in google/baidu/wikipedia/etc by shell
+A simple tool to search in google/baidu/wikipedia/etc through the shell
+
 
 ##Version 1.0.0
 
@@ -12,7 +13,6 @@ A simple tool to search in google/baidu/wikipedia/etc by shell
 
 ##Install 
 
-	cd into the folder
 	chmod +x ./setup.sh
 	./setup.sh
 
