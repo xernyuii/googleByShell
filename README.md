@@ -2,6 +2,8 @@
 
 googleByShell - a simple tool to search in google/baidu/wikipedia/etc by shell
 
+Version 1.0.0
+
 @auther XeRn(hfutxc.xern@gmail.com)
 @date   2017/1/14
 
