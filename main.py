@@ -23,7 +23,7 @@ class Search:
             option = argc[1][2:]
 
             if option == 'version' or option =='v':
-                print 'googleByShell version 1.0.0 test '
+                print 'googleByShell version 1.0.1 test '
             
             elif option == 'help' or option == 'h':
                 print('gooleByShell usage list: ')
@@ -52,7 +52,7 @@ class Search:
 
     def google(self,argc):
         
-        url = 'https://www.google.com.hk/search?q=hi'
+        url = 'https://www.google.com.hk/?gws_rd=cr,ssl#newwindow=1&q='
 
         for item in argc:
             url += ' '
