@@ -1,6 +1,8 @@
 
 
-#googleByShell - a simple tool to search in google/baidu/wikipedia/etc by shell
+#googleByShell
+
+A simple tool to search in google/baidu/wikipedia/etc by shell
 
 ##Version 1.0.0
 
