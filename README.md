@@ -1,20 +1,20 @@
 
 
-googleByShell - a simple tool to search in google/baidu/wikipedia/etc by shell
+#googleByShell - a simple tool to search in google/baidu/wikipedia/etc by shell
 
-Version 1.0.0
+##Version 1.0.0
 
-	@auther XeRn(hfutxc.xern@gmail.com)
-	@date   2017/1/14
+	Search in google 
+	Search in baidu
+	Search in wikipedia
 
-
-Install 
+##Install 
 
 	cd into the folder
 	chmod +x ./setup.sh
 	./setup.sh
 
-Usage
+##Usage
 	
 	$ google hello
 	$ baidu hi
@@ -23,4 +23,4 @@ Usage
 	$ google --help
 
 
-Have fun!
+##Have fun!
