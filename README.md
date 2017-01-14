@@ -5,11 +5,12 @@
 A simple tool to search in google/baidu/wikipedia/etc through the shell
 
 
-##Version 1.0.0
-
-	Search in google 
-	Search in baidu
-	Search in wikipedia
+##Features
+	
+	V1.0.0:
+	1. Search in google 
+	2. Search in baidu
+	3. Search in wikipedia
 
 ##Install 
 
