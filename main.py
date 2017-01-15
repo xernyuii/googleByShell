@@ -57,7 +57,8 @@ class Search:
         for item in argc:
             url += ' '
             url += item
-        
+       
+        url+='&ie=utf-8' 
         webbrowser.open_new_tab(url)
     
     def baidu(self,argc):
@@ -67,6 +68,7 @@ class Search:
             url += ' '
             url += item
 
+        url+='&ie=utf-8' 
         webbrowser.open_new_tab(url)
 
     def wiki(self,argc):
