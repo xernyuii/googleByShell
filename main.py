@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+#-*- coding: UTF-8 -*-
 import sys,os 
 import webbrowser
 
@@ -23,7 +23,7 @@ class Search:
             option = argc[1][2:]
 
             if option == 'version' or option =='v':
-                print 'googleByShell version 1.0.1 test '
+                print 'googleByShell version 1.0.2 test '
             
             elif option == 'help' or option == 'h':
                 print('gooleByShell usage list: ')
@@ -58,7 +58,7 @@ class Search:
             url += ' '
             url += item
        
-        url+='&ie=utf-8' 
+        url+='&ie=utf-8&oe=utf-8' 
         webbrowser.open_new_tab(url)
     
     def baidu(self,argc):
@@ -68,7 +68,7 @@ class Search:
             url += ' '
             url += item
 
-        url+='&ie=utf-8' 
+        url+='&ie=utf-8&oe=utf-8' 
         webbrowser.open_new_tab(url)
 
     def wiki(self,argc):

@@ -6,7 +6,10 @@ A simple tool to search in google/baidu/wikipedia/etc through the shell
 
 
 ##Features
-	
+
+	V1.0.2:
+	1.Fix some bugs
+
 	V1.0.1:
 	1.Fix some bugs 
 
