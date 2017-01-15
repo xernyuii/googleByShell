@@ -52,7 +52,7 @@ class Search:
 
     def google(self,argc):
         
-        url = 'https://www.google.com.hk/?gws_rd=cr,ssl#newwindow=1&safe=strict&q='
+        url = 'https://www.google.com.hk/?gws_rd=cr,ssl%23newwindow=1&safe=strict&q=he#newwindow=1&safe=strict&q='
 
         for item in argc:
             url += ' '
