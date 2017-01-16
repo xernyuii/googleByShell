@@ -26,7 +26,7 @@ class Search:
             option = argc[1][2:]
 
             if option == 'version' or option =='v':
-                print 'googleByShell version 1.0.2 test '
+                print 'googleByShell version 1.1.0  '
             
             elif option == 'help' or option == 'h':
                 print('gooleByShell usage list: ')
