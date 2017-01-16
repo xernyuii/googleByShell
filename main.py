@@ -2,6 +2,9 @@
 #-*- coding: UTF-8 -*-
 import sys,os 
 import webbrowser
+import json
+import urllib
+import urllib2
 
 """
 
@@ -49,6 +52,10 @@ class Search:
 
         elif 'wiki' in argc[0]:
             self.wiki(argc[1:])
+        
+        elif 'translate' in argc[0]:
+            self.translate(argc[1:])
+
 
     def google(self,argc):
         
@@ -79,6 +86,62 @@ class Search:
             url += item
 
         webbrowser.open_new_tab(url)
+    
+    def translate(self,argc):
+
+        keyfrom = 'googleByShell'
+        key = '616691616'
+        api = 'http://fanyi.youdao.com/openapi.do?keyfrom=googleByShell&key=616691616&type=data&doctype=json&version=1.1&q='
+        url = api
+        for item in argc:
+            url += ' '
+            url += item
+
+        data = json.loads(urllib2.urlopen(url).read())
+
+        
+        code = data['errorCode']
+        if code == 0:
+            try:
+                u = data['basic']['us-phonetic']
+                e = data['basic']['uk-phonetic']
+            except KeyError:
+                try:
+                    c = data['basic']['phonetic']
+                except KeyError:
+                    c = 'None'
+                u = 'None'
+                e = 'None'
+         
+            try:
+                explains = data['basic']['explains']
+            except KeyError:
+                explains = 'None'
+
+            print(data['query'])
+            #print(data['translation'])
+            
+            
+            
+
+            if explains != 'None':
+                for item in explains:
+                    print(item)
+            else:
+                print("No explain")
+
+        elif code == 20:
+            print("WARNING: Word too long")
+        elif code == 30:
+            print("WARNING: Translate Error")
+        elif code == 40:
+            print("WARNING: Do not support this language")
+        elif code == 50:
+            print("WARNING: Key failed")
+        elif code == 60:
+            print("WARNING: Do not have this word")
+
+
 
 
     
