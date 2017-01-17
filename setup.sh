@@ -10,4 +10,3 @@ sudo mv ./google /usr/local/bin/
 sudo mv ./baidu /usr/local/bin/
 sudo mv ./wiki /usr/local/bin/
 sudo mv ./translate /usr/local/bin/
-
