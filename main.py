@@ -9,8 +9,11 @@ import urllib2
 """
 
 googleByShell - Simple tool search in google/baidu/wikipedia/etc by shell
+
 @Auther XeRn(hfutxc.xern@gmail.com)
+
 @Date   2017.1.14
+
 """
 
 
