@@ -6,6 +6,7 @@ import json
 import urllib
 import urllib2
 
+
 """
 
 googleByShell - Simple tool search in google/baidu/wikipedia/etc by shell
