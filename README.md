@@ -1,5 +1,4 @@
 
-
 #googleByShell
 
 A simple tool to search in google/baidu/wikipedia/etc through the shell
