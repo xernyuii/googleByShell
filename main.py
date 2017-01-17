@@ -1,10 +1,11 @@
 #!/usr/bin/env python
 #-*- coding: UTF-8 -*-
-import sys,os 
+import sys,os
 import webbrowser
 import json
 import urllib
 import urllib2
+import os.path
 
 
 """
@@ -23,15 +24,14 @@ class Search:
 
     def __init__(self, argv):
         self.check(argv)
-    
     def check(self, argc):
 
         if argc[1].startswith("--"):
             option = argc[1][2:]
 
             if option == 'version' or option =='v':
-                print 'googleByShell version 1.1.0  '
-            
+                print 'googleByShell version 1.1.0'
+
             elif option == 'help' or option == 'h':
                 print('gooleByShell usage list: ')
                 print('usage: google/baidu/wiki/translate [--h] [--v] [%s] [--d] [--nd]')
@@ -47,50 +47,28 @@ class Search:
                 print('--d                Turn on debug mode')
                 print('--nd               Turn off debug mode')
 
-        elif 'google' in argc[0]:
-            
-            self.google(argc[1:])
-
-        elif 'baidu' in argc[0]:
-            self.baidu(argc[1:])
-
-        elif 'wiki' in argc[0]:
-            self.wiki(argc[1:])
-        
         elif 'translate' in argc[0]:
             self.translate(argc[1:])
+        else:
+            self.search(argc)
 
-
-    def google(self,argc):
-        
-        url = 'https://www.google.com.hk/search?q='
-
-        for item in argc:
-            url += ' '
-            url += item
-       
-        url+='&ie=utf-8&oe=utf-8' 
-        webbrowser.open_new_tab(url)
-    
-    def baidu(self,argc):
-
-        url = 'https://www.baidu.com/s?wd='
-        for item in argc:
-            url += ' '
-            url += item
-
-        url+='&ie=utf-8&oe=utf-8' 
+    def search(self, argv):
+        urls = {
+            'google': 'https://www.google.com.hk/search?q=',
+            'baidu': 'https://www.baidu.com/s?wd=',
+            'wiki': 'https://en.wikipedia.org/wiki/',
+        }
+        extra_args = {
+            'google': '&ie=utf-8&oe=utf-8',
+            'baidu': '&ie=utf-8&oe=utf-8',
+            'wiki': ''
+        }
+        url = urls[os.path.basename(argv[0])]
+        for item in argv[1:]:
+            url += item+' ';
+        url+=extra_args[os.path.basename(argv[0])]
         webbrowser.open_new_tab(url)
 
-    def wiki(self,argc):
-
-        url = 'https://en.wikipedia.org/wiki/'
-        for item in argc:
-            url += ' '
-            url += item
-
-        webbrowser.open_new_tab(url)
-    
     def translate(self,argc):
 
         keyfrom = 'googleByShell'
@@ -103,7 +81,7 @@ class Search:
 
         data = json.loads(urllib2.urlopen(url).read())
 
-        
+
         code = data['errorCode']
         if code == 0:
             try:
@@ -114,9 +92,9 @@ class Search:
                     c = data['basic']['phonetic']
                 except KeyError:
                     c = 'None'
-                u = 'None'
-                e = 'None'
-         
+                    u = 'None'
+                    e = 'None'
+
             try:
                 explains = data['basic']['explains']
             except KeyError:
@@ -124,9 +102,9 @@ class Search:
 
             print(data['query'])
             #print(data['translation'])
-            
-            
-            
+
+
+
 
             if explains != 'None':
                 for item in explains:
@@ -148,19 +126,7 @@ class Search:
 
 
 
-    
+
 if __name__ == '__main__':
     Search(sys.argv)
-
-
-
-
-
-
-
-
-
-
-
-
 
