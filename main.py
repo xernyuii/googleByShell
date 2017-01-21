@@ -72,7 +72,7 @@ class Search:
         errorCodes = {
             0: 'success',
             20: "WARNING: Word too long",
-            30: "WARNING: Translate Error",
+            30: "WARNING: Translate Error (connenct problem) ?",
             40: "WARNING: Do not support this language",
             50: "WARNING: Key failed",
             60: "WARNING: Do not have this word"
