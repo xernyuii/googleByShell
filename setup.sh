@@ -6,7 +6,7 @@ chmod +x google
 chmod +x baidu
 chmod +x wiki
 chmod +x translate
-sudo mv ./google /usr/local/bin/
-sudo mv ./baidu /usr/local/bin/
-sudo mv ./wiki /usr/local/bin/
-sudo mv ./translate /usr/local/bin/
+mv ./google /usr/local/bin/
+mv ./baidu /usr/local/bin/
+mv ./wiki /usr/local/bin/
+mv ./translate /usr/local/bin/
